@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Валентинка</title>
+
+    <style>
+      body {
+        display: flex;
+
+        justify-content: center;
+
+        align-items: center;
+
+        height: 100vh;
+
+        flex-direction: column;
+
+        font-family: Arial, sans-serif;
+
+        background-color: pink;
+
+        text-align: center;
+      }
+
+      .buttons {
+        position: relative;
+
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 10px 20px;
+
+        font-size: 18px;
+
+        margin: 10px;
+
+        border: none;
+
+        cursor: pointer;
+      }
+
+      #yes {
+        background-color: red;
+
+        color: white;
+      }
+
+      #no {
+        background-color: gray;
+
+        color: white;
+
+        position: absolute;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Хочешь ли ты быть моей валентинкой? 💖</h1>
+
+    <div class="buttons">
+      <a href="https://www.canva.com/design/DAGeXPzRGYc/QFT6WqE6Ith_8VblbCdfOA/edit?utm_content=DAGeXPzRGYc&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+        <button id="yes">Да</button>
+      </a>
+
+      <button id="no">Нет</button>
+    </div>
+
+    <script>
+      const noButton = document.getElementById("no");
+
+      const initialX = noButton.offsetLeft;
+
+      const initialY = noButton.offsetTop;
+
+      noButton.addEventListener("mouseover", () => {
+        const offsetX = (Math.random() - 0.5) * 400;
+
+        const offsetY = (Math.random() - 0.5) * 200;
+
+        noButton.style.left = `${initialX + offsetX}px`;
+
+        noButton.style.top = `${initialY + offsetY}px`;
+      });
+    </script>
+  </body>
+</html>
